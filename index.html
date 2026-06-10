@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Accounting & Taxation Services</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar Style */
+        nav {
+            background-color: #1e293b;
+            color: #ffffff;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #ffffff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: #0284c7;
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #0369a1;
+        }
+
+        /* Section Global */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #0f172a;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #0284c7;
+            margin: 10px auto 0 auto;
+        }
+
+        /* About Section */
+        #about {
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        #about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 16px;
+            color: #475569;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid #0284c7;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        .service-card ul {
+            list-style: none;
+            font-size: 14px;
+            color: #475569;
+        }
+
+        .service-card ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .service-card ul li::before {
+            content: '✓';
+            color: #0284c7;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Portfolio Section Specific Custom Color */
+        .portfolio-card {
+            border-top: 4px solid #10b981;
+        }
+        .portfolio-card ul li::before {
+            color: #10b981;
+        }
+
+        /* Why Choose Me */
+        #why-choose-me {
+            background-color: #ffffff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .feature h3 {
+            color: #0f172a;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .feature p {
+            font-size: 14px;
+            color: #475569;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #0f172a;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        #contact .section-title {
+            color: #ffffff;
+        }
+
+        #contact p {
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #64748b;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 13px;
+            border-top: 1px solid #1e293b;
+        }
+
+        /* Responsive Settings for Mobile */
+        @media (max-width: 768px) {
+            nav .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            nav ul {
+                margin-top: 5px;
+            }
+            header h1 {
+                font-size: 28px;
+            }
+            .services-grid, .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">Mehta Consultants</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#why-choose-me">Why Me</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>Professional Accounting & Taxation Services</h1>
+            <p>Managing your financial compliance so you can focus on growing your business. Accurate, timely, and hassle-free solutions for your enterprise.</p>
+            <a href="#contact" class="cta-btn">Get Free Consultation</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p>Hi, I am an accounting professional specializing in Business Accounting and Taxation. I help small businesses, freelancers, and startups manage their finances, maintain accurate books, and stay 100% tax-compliant without any operational stress.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Services Offered</h2>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <h3>Tally & Bookkeeping</h3>
+                    <ul>
+                        <li>Daily data entry & ledger management</li>
+                        <li>Bank Reconciliation (BRS)</li>
+                        <li>Profit & Loss, Balance Sheet updates</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>GST Compliance</h3>
+                    <ul>
+                        <li>New GST Registration</li>
+                        <li>GSTR-1 & GSTR-3B monthly filing</li>
+                        <li>ITC optimization & reconciliation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>TDS Returns</h3>
+                    <ul>
+                        <li>Quarterly TDS return (Form 24Q, 26Q)</li>
+                        <li>TDS Certificate (Form 16/16A)</li>
+                        <li>Challan correction & verification</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Payroll Management</h3>
+                    <ul>
+                        <li>Salary sheet & pay slip generation</li>
+                        <li>EPF & ESIC compliance tracking</li>
+                        <li>Bonus and deduction calculations</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Portfolio & Sample Work</h2>
+            <div class="services-grid">
+                
+                <div class="service-card portfolio-card">
+                    <h3>Internship Experience</h3>
+                    <ul>
+                        <li>Assisted in monthly bank reconciliation (BRS) for local businesses.</li>
+                        <li>Maintained day-to-day ledger posting and voucher entries.</li>
+                    </ul>
+                </div>
+
+                <div class="service-card portfolio-card">
+                    <h3>Tally & Bookkeeping Sample</h3>
+                    <ul>
+                        <li>Created dummy company profiles with complete inventory management.</li>
+                        <li>Generated accurate Profit & Loss accounts and Balance Sheets.</li>
+                    </ul>
+                </div>
+
+                <div class="service-card portfolio-card">
+                    <h3>Taxation & Payroll Sheets</h3>
+                    <ul>
+                        <li>Designed automated Excel salary sheets with PF/ESIC deductions.</li>
+                        <li>Prepared mock GSTR-1 and GSTR-3B monthly return data.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose-me" style="background-color: #ffffff;">
+        <div class="container">
+            <h2 class="section-title">Why Choose Me?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>Accuracy First</h3>
+                    <p>Zero errors in tax filings and financial statements, ensuring you avoid hefty penalty compliance issues.</p>
+                </div>
+                <div class="feature">
+                    <h3>On-Time Delivery</h3>
+                    <p>Never miss a deadline again. Proactive tracking and filing for GST, TDS, and Payroll parameters.</p>
+                </div>
+                <div class="feature">
+                    <h3>Affordable for MSMEs</h3>
+                    <p>Premium accounting capabilities at a fraction of the cost of onboarding full-time in-house resources.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Talk Business!</h2>
+            <p>Have questions about your GST filings, Tally accounts, or payroll setups? Contact me today.</p>
+            <div class="contact-info">
+                Email: <a href="mailto:mohit9690mehta@gmail.com">mohit9690mehta@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Mehta Consultants. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
